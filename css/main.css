@@ -1,0 +1,699 @@
+/* Start Variables */
+:root {
+    --main-color: #19c8fa;
+    --transparant-color: rgb(15 116 143 / 70%);
+    --padding-section: 100px;
+}
+
+/* end Variables */
+/* start global rules */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+/*end Global Rules*/
+
+.continar {
+    /* عشان  المحتوى يبقى بنص الشاشة */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* media quary > part responseves*/
+/* meduim 768px 991px */
+@media (min-width:768px) {
+    .continar {
+        width: 750px;
+    }
+}
+
+/* large 992px 1199px*/
+@media (min-width: 992px) {
+    .continar {
+        width: 970px;
+    }
+}
+
+/*X-Large 1200px to 1399px*/
+@media (min-width: 1200px) {
+    .continar {
+        width: 1170px;
+    }
+}
+
+/* End Global Rules */
+/* start section mutli-using:>its parts , you can used everywere inside parts*/
+.section {
+    padding: 100px;
+}
+
+.main-heading {
+    text-align: center;
+}
+
+.main-heading h2 {
+    font-size: 40px;
+    font-weight: normal;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 70px;
+}
+
+.main-heading h2::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 2px;
+    bottom: -30px;
+    background-color: #333;
+}
+
+.main-heading h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid;
+    bottom: -38px;
+}
+
+.main-heading p {
+    color: #777;
+    line-height: 35px;
+    width: 550px;
+    max-width: 100%;
+    margin: 0 auto 100px;
+}
+
+/* end section mutli-using */
+
+/* start header */
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    left: 0;
+}
+
+header .continar {
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 97px;
+}
+
+header .continar::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 30px);
+    background-color: #9e9e9e;
+    height: 3px;
+    left: 15px;
+    bottom: 16px;
+    position: absolute;
+    z-index: -1;
+}
+
+.header .continar img {
+    height: 40px;
+    margin-top: -10px;
+}
+
+h a {
+    padding: 40px 10px;
+}
+
+.continar nav {
+    /* عشان تاخد كل المساحة المتبقية للعنصر هدا */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header nav .toggle-menu {
+    color: white;
+    font-size: 20px;
+}
+
+@media (min-width:768px) {
+    header nav .toggle-menu {
+        display: none;
+    }
+}
+
+.continar nav ul {
+    display: flex;
+}
+
+@media (max-width:767px) {
+    .continar nav ul {
+        display: none;
+    }
+
+    header nav .toggle-menu:hover+ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 67%;
+        left: 15px;
+        background-color: rgba(0, 0, 0, 50%);
+        width: calc(100% - 30px);
+    }
+
+    header nav .toggle-menu:hover+ul li a {
+        padding: 15px;
+    }
+}
+
+.continar nav ul li a {
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 24px 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.continar nav ul li a:hover,
+.continar nav ul li a:active {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+    top: 0;
+
+}
+
+.continar .form {
+    height: 40px;
+    width: 30px;
+    margin-left: 35px;
+    position: relative;
+    border-left: 1px solid white;
+    font-size: 20px;
+    left: -10px;
+}
+
+header .form i {
+    color: white;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    right: 0;
+}
+
+/* end header */
+/* Start landing */
+.landing {
+    min-height: 100vh;
+    background-image: url(../imags/pexels-ray-bilcliff-2055389.jpg);
+    background-size: cover;
+    background-color: #e7c18a;
+    position: relative;
+}
+
+/* تجربة ال layout  with div 
+وتحت هنعملوا بطريقة ال  after befor soudo elem }
+*/
+.landing .layout {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 30%);
+}
+
+@media (max-width:767px) {
+    .landing .layout {
+        display: none;
+    }
+}
+
+.landing .contant {
+    background-color: var(--transparant-color);
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    color: white;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 0 0 0 50px;
+}
+
+@media (max-width:767px) {
+    .landing .contant {
+        width: 100%;
+    }
+}
+
+.landing .contant .text {
+    max-width: 500px;
+}
+
+@media (max-width:767px) {
+    .landing .contant {
+        max-width: 100%;
+    }
+
+    .landing .contant .text {
+        max-width: 100%;
+    }
+}
+
+.landing .contant .text h2 {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.landing .contant .text p {
+    font-size: 16px;
+    line-height: 2;
+}
+
+.landing .change-angle {
+    font-size: 23px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.landing .fa-angle-left {
+    left: 30px;
+}
+
+.landing .fa-angle-right {
+    right: 30px;
+}
+
+.landing .bools {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}
+
+.landing .bools li {
+    border: 1px solid;
+    border-color: white;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+
+.bools li.active-color {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+/* end landing */
+/* Start Servies */
+.services {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+
+/*media quary on small devais*/
+@media (max-width:767px) {
+    .services .servies-continar {
+        text-align: center;
+    }
+}
+
+@media (min-width:768px) {
+    .services .servies-continar {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-column-gap: 40px;
+        grid-row-gap: 60px
+    }
+}
+
+@media (min-width:768px) {
+    .servies-continar .Srv-box {
+        display: flex;
+    }
+}
+
+.servies-continar .Srv-box .text {
+    margin: 0 50px;
+}
+
+.servies-continar .Srv-box h3 {
+    color: var(--main-color);
+}
+
+.servies-continar .Srv-box p {
+    color: #777;
+    line-height: 2;
+}
+
+/* end Servies */
+/* Start Design */
+.Design {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-color: #2e39;
+    height: 600px;
+    width: 100%;
+    background-image: url(../imags/Landing1.jpg);
+    background-size: cover;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.Design::before {
+    content: "";
+    background-color: rgb(0 0 0 / 60%);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    left: 0;
+}
+
+.Design .imag {
+    bottom: -100px;
+    position: relative;
+    text-align: center;
+}
+
+@media (max-width:786px) {
+    .Design .imag {
+        display: none;
+    }
+}
+
+.Design .texts {
+    background-color: var(--transparant-color);
+    padding: 50px;
+    right: 0;
+    position: absolute;
+    color: white;
+    width: 50%;
+}
+
+.Design .texts,
+.Design .imag {
+    flex: 1;
+    z-index: 2;
+    position: relative;
+}
+
+.Design .texts h2 {
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.Design .texts ul li {
+    padding: 15px 0;
+}
+
+/* طريقة 2 في استخدام الايكون بال سودوا اليمنت  pseudo element 
+الطريقة الاولى عن طريق عن طريق ملف ال html
+*/
+.Design .texts ul li::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f390";
+    font-weight: 900;
+    margin: 0 10px;
+}
+
+/* End Design */
+/* start protfolio */
+.protfolio {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+
+.continar .list-choose ul {
+    display: flex;
+    justify-content: center;
+}
+
+.continar .list-choose ul li {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.continar ul li.active {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.protfolio .image-colections {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.protfolio .image-colections a {
+    text-decoration: none;
+    background-color: var(--main-color);
+    display: block;
+    width: fit-content;
+    color: white;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    margin: 20px auto;
+    transition: 0.2s;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: var(--main-color);
+}
+
+.protfolio .image-colections .box {
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
+}
+
+.protfolio .image-colections .box:hover .caption {
+    bottom: 0;
+}
+
+.protfolio .image-colections .box:hover img {
+    transform: rotate(3deg) scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .protfolio .image-colections .box {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 1199px) {
+    .protfolio .image-colections .box {
+        flex-basis: 25%;
+    }
+}
+
+.protfolio .image-colections .box img {
+    max-width: 100%;
+    transition: 0.3s;
+}
+
+.protfolio .box .caption {
+    padding: 20px;
+    left: 0;
+    position: absolute;
+    transition: 0.3s;
+    width: 100%;
+    background-color: white;
+    bottom: -100%;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: var(--main-color);
+}
+
+.protfolio .box .caption h4 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.protfolio .box .caption p {
+    color: var(--main-color);
+}
+
+/* end protfolio */
+/* Start video */
+.Video {
+    position: relative;
+}
+
+.Video::before {
+    content: "";
+    position: absolute;
+    background-color: rgb(0 0 0 / 40%);
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.Video video {
+    max-width: 100%;
+}
+
+.Video .text {
+    background-color: var(--transparant-color);
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 50px;
+}
+
+.Video .text h2,
+.Video .text p {
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.Video .text button {
+    background-color: black;
+    padding: 10px 20px;
+    border: none;
+}
+
+.Video .text button,
+Video .text h2 {
+    text-transform: uppercase;
+}
+
+.Video .text,
+.Video .text button {
+    color: white;
+}
+
+/* end video*/
+/* start about us */
+.about-us {
+    padding-top: var(--padding-section);
+    text-align: center;
+    overflow: hidden;
+}
+
+.about-us img {
+    position: relative;
+    max-width: 100%;
+    bottom: -120px;
+    margin-top: -120px;
+}
+
+@media (max-width:767px) {
+    .about-us img {
+        position: relative;
+        max-width: 100%;
+        bottom: -60px;
+        margin-top: -60px;
+    }
+}
+
+/* end about us */
+/* Start Stats */
+.Stats {
+    background-image: url(../imags/stats.png);
+    max-width: 100%;
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    position: relative;
+    text-align: center;
+    background-size: cover;
+}
+
+.Stats::before {
+    content: "";
+    background-color: rgb(0 0 0 / 70%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.Stats .continar {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.Stats .continar .box {
+    color: white;
+    padding: 50px;
+    width: 100%;
+    background-color: var(--transparant-color);
+}
+
+/* mobile width 0 >> 767  px  */
+@media (max-width: 767px) {
+    .Stats .continar .box {
+        flex-basis: 100%;
+    }
+}
+
+/* meduem width 768 >> 991 px  */
+@media (min-width:768px) {
+    .Stats .continar .box {
+        flex-basis: 50%;
+    }
+}
+
+/* large width 992px >> 1400  px  */
+@media (min-width: 992px) {
+    .Stats .continar .box {
+        flex-basis: 25%;
+    }
+}
+
+.Stats .box .number {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+.Stats .box i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+}
+
+/* end Stats */
