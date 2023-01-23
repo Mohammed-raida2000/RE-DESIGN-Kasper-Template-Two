@@ -697,3 +697,39 @@ Video .text h2 {
 }
 
 /* end Stats */
+/* start skills */
+.our-skills {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+
+}
+.our-skills .continar {
+    display: flex;
+    /* problem */
+    gap: 90px;
+}
+.our-skills .continar  h3  {
+    text-align: center;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.our-skills .continar h3 ~ p {
+    line-height: 2;
+    color: #777;
+    margin-bottom: 60px;
+    text-align: center; 
+}
+.our-skills .testimonials .contant {
+    display: flex;
+    align-items: center;
+}
+.our-skills .testimonials .contant img {
+    border-radius: 50%;
+    width: 100px;
+}
+.our-skills .testimonials .contant .text {
+    margin: 0 50px 30px ;
+    line-height: 2;
+}
+/* end skills */
