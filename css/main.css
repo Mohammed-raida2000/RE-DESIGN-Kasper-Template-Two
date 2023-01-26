@@ -205,7 +205,7 @@ header nav .toggle-menu {
 .continar nav ul li a:hover,
 .continar nav ul li a:active {
     color: var(--main-color);
-    border-bottom: 1px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
     top: 0;
 
 }
@@ -705,8 +705,12 @@ Video .text h2 {
 }
 .our-skills .continar {
     display: flex;
-    /* problem */
-    gap: 90px;
+    gap: 80px;
+}
+@media (max-width:992px) {
+    .our-skills .continar {
+            flex-wrap: wrap;
+    }
 }
 .our-skills .continar  h3  {
     text-align: center;
@@ -724,12 +728,365 @@ Video .text h2 {
     display: flex;
     align-items: center;
 }
+@media (max-width:768px) {
+    .our-skills .testimonials .contant {
+        text-align: center;
+        display: block;
+    }
+}
+.our-skills .testimonials  .bolls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.our-skills .testimonials  .bolls span {
+    height: 15px;
+    width: 15px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+.our-skills .testimonials .bolls .active {
+    background-color: var(--main-color);
+}
 .our-skills .testimonials .contant img {
     border-radius: 50%;
     width: 100px;
 }
+.our-skills .testimonials .text p {
+    color: #777;
+    margin-bottom: 10px;
+    text-align: end;
+    font-size: 14px;
+}
 .our-skills .testimonials .contant .text {
     margin: 0 50px 30px ;
     line-height: 2;
+    border-bottom: 1px solid #ccc;
+}
+.our-skills  .SKILLS .prog-holder {
+    margin-bottom: 40px;
+}
+.our-skills .SKILLS .prog-holder p {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.our-skills .SKILLS .prog-holder .prog {
+    height: 30px;
+    width: 100%;
+    background-color: #dedadc;
+}
+.our-skills .SKILLS .prog-holder .prog span {
+    display: block;
+    background-color: var(--main-color);
+    height: 30px;
+}
+.our-skills .SKILLS .prog-holder .prog span::before {
+    content: attr(data);
+    display: block;
+    width: 36px;
+    background-color: black;
+    border-radius: 5px;
+    bottom: 35px;
+    padding: 5px;
+    position: relative;
+    left: 94%;
+    text-align: center;
+    color: white; 
+}
+.our-skills .SKILLS .prog-holder .prog span::after {
+    content: "";
+    display: block;
+    height: 22px;
+    width: 1px;
+    border: 7px solid;
+    border-color: black transparent transparent transparent;
+    bottom: 35px;
+    position: relative;
+    left: 98%;
 }
 /* end skills */
+/* Start Quote  */
+.Quote {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-image: url(../imags/quote.jpg);
+    background-size: cover;
+    max-width: 100%;
+    position: relative;
+    
+}
+.Quote::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(0 0 0 / 70%);
+    top: 0;
+    left: 0;
+}
+.Quote .continar {
+    position: relative;
+    text-align: center;
+}
+.Quote .continar p {
+    color: white;
+    letter-spacing: 1px;
+    font-size: 30px;
+    margin: 0 0 20px 0;
+}
+/* -------------------------------------------------- */
+.Quoteing q {
+    quotes: "“" "”";
+}
+/* use unicode .. OR  .. */
+/* .Quote .continar p::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f10d";
+    font-weight: 900;
+    margin: 0 10px;
+}
+.Quote .continar p::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f10e";
+    font-weight: 900;
+    margin: 0 10px;
+
+} */
+/* -------------------------------------------------- */
+/* or using qoute code https: "
+//css-tricks.com/quoting-in-html-quotations-citations-and-blockquotes/#top-of-site  */
+.Quote .continar p::before {
+    content: "";
+}
+.Quote .continar p::after {
+    content: "";
+}
+.Quote .continar span{
+    color: white;
+    font-size: 20px;
+}
+/*End Quote */
+/* Start pricing */
+.pricing {
+    padding-bottom: var(--padding-section);
+}
+.pricing .continar .contact-text {
+    text-align: center;
+    font-size: 20px;
+}
+.pricing .continar .contact-link {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    background-color: var(--main-color);
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);    
+}
+.pricing .continar .plans {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(250px ,1fr));
+}
+.pricing .plans  .plan {
+    background-color: #fcfcfc;
+    text-align: center;
+}
+.pricing .plans .plan .head{
+    padding: 40px 20px;
+    border-bottom: 1px solid var(--main-color);
+    border-top: 1px solid var(--main-color);
+}
+.pricing .plans .plan .head h3 {
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.pricing .plans .plan .head span {
+    font-size: 60px;
+    font-weight: 900;
+}
+.pricing .plans .plan .head span::before {
+    content: "$";
+    font-weight: normal;
+    font-size: 25px;
+    margin: 0 10px;
+    bottom: 40px;
+    position: relative;
+}
+.pricing .plans .plan .head span::after {
+    content: "/Mo";
+    font-weight: 900;
+    font-size: 20px;
+    margin: 0 10px;
+    position: relative;
+}
+.pricing .plans .plan ul {
+    padding: 0;
+    border-bottom: 1px solid var(--main-color);
+}
+.pricing .plans .plan ul li {
+    padding: 20px;
+    position: relative;
+}
+.pricing .plans .plan ul li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 140px;
+    background-color: var(--main-color);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+.pricing .plans .plan .foot a {
+    padding: 20px 20px ;
+    text-decoration: none;
+    border: 1px solid var(--main-color);
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin: 30px auto 20px;
+    color: black;
+}
+/* End pricing */
+/* Start subscribe */
+.subscribe {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-image: url(../imags/subscribe.jpg);
+    position: relative;
+    background-size: cover;
+    color: white;
+}
+.subscribe::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background-color: rgb(0 0 0 / 40%);
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.subscribe .continar {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.subscribe form ::placeholder {
+    color: white;
+}
+@media (max-width: 991px) {
+    .subscribe .continar {
+        flex-direction: column;
+    }
+}
+.subscribe .continar i::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 40px;
+}
+.subscribe p {
+    line-height: 2;
+    margin-left: 50px;
+}
+@media (max-width: 991px) {
+    .subscribe p {
+        margin: 0 30px ;
+        }
+}
+.subscribe .continar .Email {
+    display: flex;
+    border: 1px solid;
+    color: white;
+    width: 500px;
+    /* بتعدل لون الكارسر  */
+    caret-color: var(--main-color);
+    max-width: 100%;
+}
+.subscribe .continar .Email input[type="email"] {
+    background: none;
+    border: none;
+    padding: 20px 20px 20px 60px;
+    width: calc(100% - 130px);
+}
+.subscribe .continar .Email input[type="submit"] {
+    width: 130px;
+    background: var(--main-color);
+    border: 1px solid white;
+    border-left: none;
+    color: white;
+    text-transform: uppercase;
+}
+/* to erase the outline around object when you hover the box and submit botten input */
+.subscribe .continar .Email input[type="email"]:focus ,
+.subscribe .continar .Email input[type="submit"]:focus {
+    outline: none;
+}
+/* End subscribe */
+/* start ContactUs */
+.ContactUs {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+.ContactUs .continar .data-Company {
+    display: flex;
+    justify-content: space-between;
+}
+.ContactUs .continar .data-Company form {
+    flex-basis: 70%;
+}
+.ContactUs .data-Company form input[type="text"] , 
+.ContactUs .data-Company form input[type="email"],
+.ContactUs .data-Company form input[type="submit"] {
+    padding: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+textarea {
+    margin-bottom: 40px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+.ContactUs .data-Company form input[type="submit"] {
+    padding: 15px;
+    width: fit-content;
+    position: relative;
+    top: 20px;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    text-transform: uppercase;
+    left: 70%;
+}
+.ContactUs .data-Company .info {
+    flex-basis: 25%;
+} 
+.ContactUs .data-Company .info h4:first-of-type{
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 20px;
+    margin-top: 0;
+}  
+.ContactUs .data-Company .info h4:last-of-type {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 20px;
+    margin-top: 100px;
+}
+.ContactUs .data-Company .info address {
+    color: #777;
+    line-height: 2;
+}
+.ContactUs .data-Company .info .phone {
+    color: #777;
+    margin-bottom: 15px;
+    display: block;
+}
+/* end ContactUs */
