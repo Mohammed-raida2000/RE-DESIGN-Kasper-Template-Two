@@ -126,9 +126,12 @@ header .continar {
     justify-items: center;
     justify-content: space-between;
     position: relative;
-    height: 97px;
+    height: 85px;
 }
-
+.continar .logo  {
+    top: 25%;
+    position: absolute;
+}
 header .continar::after {
     content: "";
     position: absolute;
@@ -986,7 +989,7 @@ Video .text h2 {
     }
 }
 .subscribe .continar i::before {
-    position: absolute;
+    position: relative;
     top: 50%;
     transform: translateY(-50%);
     left: 40px;
@@ -1023,11 +1026,6 @@ Video .text h2 {
     color: white;
     text-transform: uppercase;
 }
-/* to erase the outline around object when you hover the box and submit botten input */
-.subscribe .continar .Email input[type="email"]:focus ,
-.subscribe .continar .Email input[type="submit"]:focus {
-    outline: none;
-}
 /* End subscribe */
 /* start ContactUs */
 .ContactUs {
@@ -1038,36 +1036,51 @@ Video .text h2 {
     display: flex;
     justify-content: space-between;
 }
+@media (max-width:767px) {
+    .ContactUs .continar .data-Company {
+        flex-direction: column;
+    }
+}
 .ContactUs .continar .data-Company form {
     flex-basis: 70%;
 }
-.ContactUs .data-Company form input[type="text"] , 
-.ContactUs .data-Company form input[type="email"],
-.ContactUs .data-Company form input[type="submit"] {
-    padding: 20px;
-    margin-bottom: 40px;
-    width: 100%;
-    border: 1px solid #ccc;
+.ContactUs .continar .data-Company form textarea {
+    height: 200px;
 }
-textarea {
-    margin-bottom: 40px;
+/* to erase the outline around object when you hover the box and submit botten input */
+.ContactUs .continar .data-Company form .main-input:focus{
+    outline: none;
+}
+.ContactUs .data-Company form .main-input ,
+.ContactUs .data-Company form .main-input ,
+.ContactUs .data-Company form .main-input {
+    padding: 20px;
+    margin-bottom: 30px;
     width: 100%;
     border: 1px solid #ccc;
+    width: 100%;
 }
 .ContactUs .data-Company form input[type="submit"] {
     padding: 15px;
-    width: fit-content;
-    position: relative;
-    top: 20px;
     border: none;
     background-color: var(--main-color);
     color: white;
     text-transform: uppercase;
-    left: 70%;
+    display: flex;
+    margin-left: auto;
+    cursor: pointer;
 }
 .ContactUs .data-Company .info {
     flex-basis: 25%;
 } 
+@media (max-width:767px) {
+    .ContactUs .data-Company .info{
+        order: -1;
+        text-align: center;
+        position: relative;
+        top: -30px;
+}
+}
 .ContactUs .data-Company .info h4:first-of-type{
     text-transform: uppercase;
     font-weight: normal;
@@ -1078,7 +1091,7 @@ textarea {
     text-transform: uppercase;
     font-weight: normal;
     font-size: 20px;
-    margin-top: 100px;
+    margin-top: 80px;
 }
 .ContactUs .data-Company .info address {
     color: #777;
@@ -1090,3 +1103,66 @@ textarea {
     display: block;
 }
 /* end ContactUs */
+/* Start footer */
+.footer {
+    padding-top: calc(var(--padding-section) /2) ;
+    padding-bottom: calc(var(--padding-section)/2) ;
+    background-image: url(../imags/subscribe.jpg);   
+    position: relative; 
+    width: 100%;
+    color: white;
+    background-size: cover;
+}
+.footer::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background-color: rgb(0 0 0 / 60%);
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.footer .continar {
+    position: relative;
+}
+.footer .foot {
+    position: relative;
+    text-align: center;
+}
+.footer .foot h3 {
+    font-size: 22px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 20px auto;
+    padding: 20px;
+    border-bottom: 1px solid white;
+    width: fit-content;
+}
+.footer .foot .social-icon {
+    margin: 0 0 60px 0;
+}
+.footer .foot .social-icon i {
+    padding: 10px 15px;
+}
+.footer .foot  .copyrigth {
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+.footer .foot .copyrigth span {
+    color: var(--main-color);
+}
+.footer .foot .finally {
+    display: block;
+    padding: 30px 15px;
+    color: var(--main-color);
+    font-weight: 900;
+    font-size: 27px;  
+    letter-spacing: 2px;
+}
+.footer .foot .Love-icon {
+    font-size: 50px;
+    color: red;
+    bottom: -10px;
+    position: relative;
+}
+/* end  footer */
