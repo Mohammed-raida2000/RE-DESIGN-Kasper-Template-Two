@@ -29,8 +29,6 @@ ul li a {
     text-decoration: none;
 }
 
-/*end Global Rules*/
-
 .continar {
     /* عشان  المحتوى يبقى بنص الشاشة */
     margin-left: auto;
@@ -78,7 +76,6 @@ ul li a {
     position: relative;
     margin-bottom: 70px;
 }
-
 .main-heading h2::before {
     content: "";
     position: absolute;
@@ -149,10 +146,9 @@ header .continar::after {
     margin-top: -10px;
 }
 
-h a {
+.header a {
     padding: 40px 10px;
 }
-
 .continar nav {
     /* عشان تاخد كل المساحة المتبقية للعنصر هدا */
     flex: 1;
@@ -160,27 +156,22 @@ h a {
     align-items: center;
     justify-content: flex-end;
 }
-
 header nav .toggle-menu {
     color: white;
     font-size: 20px;
 }
-
 @media (min-width:768px) {
     header nav .toggle-menu {
         display: none;
     }
 }
-
 .continar nav ul {
     display: flex;
 }
-
 @media (max-width:767px) {
     .continar nav ul {
         display: none;
     }
-
     header nav .toggle-menu:hover+ul {
         display: flex;
         flex-direction: column;
@@ -323,7 +314,6 @@ header .form i {
     bottom: 0;
     transform: translateX(-50%);
     display: flex;
-    justify-content: space-between;
     width: 100px;
 }
 
